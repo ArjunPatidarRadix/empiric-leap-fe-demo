@@ -46,6 +46,7 @@ export default function GridDemo({ budget }: { budget: any }) {
             dataKey: "label",
           },
         ]}
+        margin={{ left: 110 }}
         series={[{ dataKey: "budget", valueFormatter }]}
         layout="horizontal"
         grid={{ vertical: true }}
