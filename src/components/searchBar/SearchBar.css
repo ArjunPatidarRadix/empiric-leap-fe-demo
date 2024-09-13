@@ -1,0 +1,13 @@
+.search-root {
+    width: 16rem;
+    background-color: var(--secondary-color);
+    height: 3rem;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.textfield{
+    color: aliceblue;
+}

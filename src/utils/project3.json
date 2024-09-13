@@ -1,0 +1,226 @@
+{
+  "project_name": "Pharma place",
+  "budget": {
+    "orignal_estimate": 2220651,
+    "final_cost": 2328051,
+    "difference": 107400
+  },
+  "RFIs": {
+    "qty": 5,
+    "turn_time": 3.2
+  },
+  "change_orders": {
+    "qty": "7",
+    "turn_time": ""
+  },
+  "schedule": {
+    "original": "56",
+    "actual": "60",
+    "difference": "4"
+  },
+  "safety": {
+    "manhours": "",
+    "recordables": "",
+    "near_misses": ""
+  },
+  "key_insights": "",
+  "team_experience": {
+    "star_count": 2.5,
+    "message": "Loved the client, favorite of all time."
+  },
+  "financial_performance": {
+    "subcontractor_performance": [
+      {
+        "subcontractor": "Demo Guys",
+        "original_estimate": 85000,
+        "final_cost": 83000
+      },
+      {
+        "subcontractor": "Clean Pro",
+        "original_estimate": 68000,
+        "final_cost": 69000
+      },
+      {
+        "subcontractor": "Interior Specialists (Framing)",
+        "original_estimate": 97000,
+        "final_cost": 102000
+      },
+      {
+        "subcontractor": "Plumbing Godz",
+        "original_estimate": 108000,
+        "final_cost": 108000
+      },
+      {
+        "subcontractor": "Southland Mechanical",
+        "original_estimate": 400001,
+        "final_cost": 416501
+      },
+      {
+        "subcontractor": "Rodda Electric",
+        "original_estimate": 330000,
+        "final_cost": 325000
+      },
+      {
+        "subcontractor": "Interior Specialists (Drywall)",
+        "original_estimate": 150000,
+        "final_cost": 152750
+      },
+      {
+        "subcontractor": "Sprinkler Folkz",
+        "original_estimate": 145000,
+        "final_cost": 240000
+      },
+      {
+        "subcontractor": "Interior Specialists (Painting)",
+        "original_estimate": 122000,
+        "final_cost": 123000
+      },
+      {
+        "subcontractor": "Interior Specialists (Ceiling Grid)",
+        "original_estimate": 96000,
+        "final_cost": 95000
+      },
+      {
+        "subcontractor": "Casework Shooters",
+        "original_estimate": 78000,
+        "final_cost": 77000
+      },
+      {
+        "subcontractor": "Floorz",
+        "original_estimate": 209000,
+        "final_cost": 207000
+      },
+      {
+        "subcontractor": "3pt Commish",
+        "original_estimate": 65000,
+        "final_cost": 65000
+      }
+    ],
+    "revenue": {
+      "Initial_Projections": 2220651,
+      "Actual_Revenue": 2328051,
+      "Key_Contributors": [
+        "Southland Mechanical (Mechanical)",
+        "Floorz (Flooring)",
+        "Interior Specialists (Drywall, Painting, Ceiling Grid)",
+        "Clean Pro (Clean)",
+        "Casework Shooters (Casework)"
+      ]
+    },
+    "Highest_Budget_Variances": [
+      {
+        "subcontractor": "Sprinkler (Sprinkler Folkz)",
+        "budget_variance": 95000
+      },
+      {
+        "subcontractor": "Mechanical (Southland Mechanical)",
+        "budget_variance": 16500
+      },
+      {
+        "subcontractor": "Framing (Interior Specialists)",
+        "budget_variance": 5000
+      },
+      {
+        "subcontractor": "Electrical (Rodda Electric)",
+        "budget_variance": -5000
+      }
+    ],
+    "GCs_to_Budget": {
+      "manhours": "3.76%",
+      "recordables": "1.07%",
+      "near_misses": "0.54%"
+    },
+    "key_insights": ""
+  },
+  "team_performance": {
+    "overall_Performance": "",
+    "Individual Performance": [
+      {
+        "team_member": "",
+        "role": "",
+        "overall_score": ""
+      }
+    ],
+    "Subcontractor_Performance": [
+      {
+        "subcontractor": "Demo Guys",
+        "overall_score": "7"
+      },
+      {
+        "subcontractor": "Clean Pro",
+        "overall_score": "6"
+      },
+      {
+        "subcontractor": "Interior Specialists (Framing)",
+        "overall_score": "7"
+      },
+      {
+        "subcontractor": "Plumbing Godz",
+        "overall_score": "7"
+      },
+      {
+        "subcontractor": "Southland Mechanical",
+        "overall_score": "4"
+      },
+      {
+        "subcontractor": "Rodda Electric",
+        "overall_score": "7"
+      },
+      {
+        "subcontractor": "Interior Specialists (Drywall)",
+        "overall_score": "6"
+      },
+      {
+        "subcontractor": "Sprinkler Folkz",
+        "overall_score": "7"
+      },
+      {
+        "subcontractor": "Interior Specialists (Painting)",
+        "overall_score": "6"
+      },
+      {
+        "subcontractor": "Interior Specialists (Ceiling Grid)",
+        "overall_score": "6"
+      },
+      {
+        "subcontractor": "Casework Shooters",
+        "overall_score": "6"
+      },
+      {
+        "subcontractor": "Floorz",
+        "overall_score": "5"
+      },
+      {
+        "subcontractor": "3pt Commish",
+        "overall_score": "7"
+      }
+    ],
+    "KPIs": [
+      {
+        "performance_indicator": "Excitement to Work on the Project",
+        "overall_score": "5"
+      },
+      {
+        "performance_indicator": "Challenge in a Good Way",
+        "overall_score": "4.4"
+      },
+      {
+        "performance_indicator": "Personal Success of the Project",
+        "overall_score": "4.6"
+      },
+      {
+        "performance_indicator": "Control Over Field Crews",
+        "overall_score": "3.4"
+      },
+      {
+        "performance_indicator": "Positive Comments from Team",
+        "overall_score": "7"
+      },
+      {
+        "performance_indicator": "Areas of Improvement",
+        "overall_score": "4"
+      }
+    ],
+    "key_insights": ""
+  }
+}

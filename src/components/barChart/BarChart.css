@@ -1,0 +1,11 @@
+.near-row{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.yellow-text{
+    font-size: medium;
+    color: var(--accent-color);
+}

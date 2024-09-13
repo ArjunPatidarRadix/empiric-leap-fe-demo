@@ -1,0 +1,14 @@
+.header {
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    /* background-color: bisque; */
+    height: 6rem;
+    padding: 1rem 4rem;
+    align-items: center;
+}
+
+h1 {
+    color: var(--text-color);
+}

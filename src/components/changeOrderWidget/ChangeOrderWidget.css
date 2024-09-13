@@ -1,0 +1,15 @@
+.schedule-table{
+    width:50%;
+    table-layout: fixed;
+}
+
+td{
+    color: var(--text-color);
+    font-weight: 100;
+    font-size: small;
+}
+
+.cell-data{
+    color: var(--accent-color);
+    font-weight: 300;
+}
