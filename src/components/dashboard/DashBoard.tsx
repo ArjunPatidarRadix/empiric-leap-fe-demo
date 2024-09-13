@@ -18,8 +18,8 @@ import LoaderComp from "../../utils/loader";
 import RatingWidget from "../ratingWidget/RatingWidget";
 import SubcontracorScoreWidget from "../subcontracorScoreWidget/SubcontracorScoreWidget";
 
-const BASE_URL = "http://localhost:8080/";
-// const BASE_URL = "https://empiric-leap-be-91ln.vercel.app/";
+// const BASE_URL = "http://localhost:8080/";
+const BASE_URL = "https://empiric-leap-be-91ln.vercel.app/";
 
 function DashBoard() {
   const [selectedProject, setSelectedProject] = useState<any>();
