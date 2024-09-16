@@ -19,7 +19,8 @@ import RatingWidget from "../ratingWidget/RatingWidget";
 import SubcontracorScoreWidget from "../subcontracorScoreWidget/SubcontracorScoreWidget";
 
 // const BASE_URL = "http://localhost:8080/";
-const BASE_URL = "https://empiric-leap-be-91ln.vercel.app/";
+// const BASE_URL = "https://empiric-leap-be-91ln.vercel.app/";
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 function DashBoard() {
   const [selectedProject, setSelectedProject] = useState<any>();
@@ -31,6 +32,8 @@ function DashBoard() {
   useEffect(() => {
     setLoading(true);
     async function getData() {
+      // console.log("BASE_URL:: ", BASE_URL)
+
       try {
         const response = await fetch(`${BASE_URL}getProjects/`);
 
@@ -107,7 +110,8 @@ function DashBoard() {
                         style={{
                           display: "flex",
                           flexDirection: "row",
-                          width: "100%",
+                          width: "90%",
+                          gap: '5%'
                         }}
                       >
                         <Widget title="RFIs">

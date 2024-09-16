@@ -24,3 +24,10 @@
    grid-gap: 10px;
    counter-reset: boxes; */
 }
+
+@media only screen and (max-width: 600px) {
+    .grid-root {
+        grid-template-columns: 100%;
+
+    }
+  }
