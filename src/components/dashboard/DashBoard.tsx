@@ -17,10 +17,7 @@ import KPIWidget from "../kpiWidget/KPIWidget";
 import LoaderComp from "../../utils/loader";
 import RatingWidget from "../ratingWidget/RatingWidget";
 import SubcontracorScoreWidget from "../subcontracorScoreWidget/SubcontracorScoreWidget";
-
-// const BASE_URL = "http://localhost:8080/";
-// const BASE_URL = "https://empiric-leap-be-91ln.vercel.app/";
-const BASE_URL = process.env.REACT_APP_BASE_URL;
+import { BASE_URL } from "../../utils/contants";
 
 function DashBoard() {
   const [selectedProject, setSelectedProject] = useState<any>();
@@ -35,7 +32,7 @@ function DashBoard() {
       // console.log("BASE_URL:: ", BASE_URL)
 
       try {
-        const response = await fetch(`${BASE_URL}getProjects/`);
+        const response = await fetch(`${BASE_URL}/dashboard/getProjects/`);
 
         const data = await response.json();
         setAllProjectsData(data);
@@ -65,8 +62,11 @@ function DashBoard() {
       {loading ? (
         <div
           style={{
-            width: "100px",
-            margin: "auto",
+            display: "flex",
+            flex: 1,
+            height: "100vh",
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
           <LoaderComp />
@@ -111,7 +111,7 @@ function DashBoard() {
                           display: "flex",
                           flexDirection: "row",
                           width: "90%",
-                          gap: '5%'
+                          gap: "5%",
                         }}
                       >
                         <Widget title="RFIs">

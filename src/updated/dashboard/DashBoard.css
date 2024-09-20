@@ -1,0 +1,33 @@
+.dashboard {
+    display: flex;
+    flex-direction: row;
+}
+
+.data-container{
+    display: flex;
+    width: 85%;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.grid-root{
+    display: grid;
+   grid-template-columns: 50% 50%;
+   list-style-type: none;
+   /* width: 100%;
+   display: grid;
+   margin: 0 auto;
+   height: auto;
+   grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+   grid-auto-rows: 1fr;
+   grid-auto-flow: row dense;
+   grid-gap: 10px;
+   counter-reset: boxes; */
+}
+
+@media only screen and (max-width: 600px) {
+    .grid-root {
+        grid-template-columns: 100%;
+
+    }
+  }
