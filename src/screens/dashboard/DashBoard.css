@@ -1,11 +1,12 @@
 .dashboard {
     display: flex;
     flex-direction: row;
+    flex: 1;
 }
 
 .data-container{
     display: flex;
-    width: 85%;
+    width: 100%;
     flex-direction: column;
     padding: 30px;
 }

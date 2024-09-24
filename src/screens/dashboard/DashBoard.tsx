@@ -1,23 +1,25 @@
 import React, { useEffect, useRef, useState } from "react";
-import Header from "../header/Header";
-import SideBar from "../sideBar/SideBar";
+import Header from "../../components/header/Header";
+import SideBar from "../../components/sideBar/SideBar";
 import "./DashBoard.css";
-import Widget from "../widget/Widget";
-import HeaderTitle from "../headerTitle/HeaderTitle";
-import GridDemo from "../barChart/BarChart";
-import ScheduleWidget from "../scheduleWidget/ScheduleWidget";
-import ChangeOrderWidget from "../changeOrderWidget/ChangeOrderWidget";
+import Widget from "../../components/widget/Widget";
+import HeaderTitle from "../../components/headerTitle/HeaderTitle";
+import GridDemo from "../../components/barChart/BarChart";
+import ScheduleWidget from "../../components/scheduleWidget/ScheduleWidget";
+import ChangeOrderWidget from "../../components/changeOrderWidget/ChangeOrderWidget";
 
 // import allData from "../../utils/allData.json";
-import SafetyWidget from "../safetyWidget/SafetyWidget";
-import SubcontractorWidget from "../subcontractorWidget/SubcontractorWidget";
-import HighestBudgetVariancesWidget from "../highestBudgetVariancesWidget/HighestBudgetVariancesWidget";
-import RevenueWidget from "../revenueWidget/RevenueWidget";
-import KPIWidget from "../kpiWidget/KPIWidget";
+import SafetyWidget from "../../components/safetyWidget/SafetyWidget";
+import SubcontractorWidget from "../../components/subcontractorWidget/SubcontractorWidget";
+import HighestBudgetVariancesWidget from "../../components/highestBudgetVariancesWidget/HighestBudgetVariancesWidget";
+import RevenueWidget from "../../components/revenueWidget/RevenueWidget";
+import KPIWidget from "../../components/kpiWidget/KPIWidget";
 import LoaderComp from "../../utils/loader";
-import RatingWidget from "../ratingWidget/RatingWidget";
-import SubcontracorScoreWidget from "../subcontracorScoreWidget/SubcontracorScoreWidget";
+import RatingWidget from "../../components/ratingWidget/RatingWidget";
+import SubcontracorScoreWidget from "../../components/subcontracorScoreWidget/SubcontracorScoreWidget";
 import { BASE_URL } from "../../utils/contants";
+import { getToken } from "../../utils/util";
+import { useNavigate } from "react-router-dom";
 
 function DashBoard() {
   const [selectedProject, setSelectedProject] = useState<any>();
@@ -26,20 +28,30 @@ function DashBoard() {
 
   const [loading, setLoading] = useState(false);
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     setLoading(true);
     async function getData() {
       // console.log("BASE_URL:: ", BASE_URL)
 
       try {
-        const response = await fetch(`${BASE_URL}/dashboard/getProjects/`);
+        const token = getToken();
+        console.log(token);
+        if (token) {
+          const response = await fetch(`${BASE_URL}dashboard/getProjects/`, {
+            headers: { Authorization: `Bearer ${token}` },
+          });
 
-        const data = await response.json();
-        setAllProjectsData(data);
-        data?.length && setSelectedProject(data[0]);
-        setLoading(false);
+          const data = await response.json();
+          setAllProjectsData(data);
+          data?.length && setSelectedProject(data[0]);
+          setLoading(false);
 
-        console.log("data: " + data);
+          console.log("data: " + data);
+        } else {
+          navigate("/login");
+        }
       } catch (error) {
         console.log("error: " + error);
       }

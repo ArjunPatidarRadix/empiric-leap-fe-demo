@@ -14,9 +14,9 @@ function SubcontractorWidget({
           <td className="td-header">Original Estimate</td>
           <td className="td-header">Final Cost</td>
         </tr>
-        {subcontractorData?.map((data) => {
+        {subcontractorData?.map((data, index) => {
           return (
-            <tr className="border-below">
+            <tr key={index} className="border-below">
               <td>{data?.subcontractor}</td>
               <td>$ {data?.original_estimate}</td>
               <td>$ {data?.final_cost}</td>

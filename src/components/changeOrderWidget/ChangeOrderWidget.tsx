@@ -9,11 +9,11 @@ function ChangeOrderWidget({
   return (
     <div>
       <table className="schedule-table" border={0} cellPadding={3}>
-        <tr>
+        <tr key={1}>
           <td>Qty</td>
           <td className="cell-data">{rfiChangeOrderData?.qty}</td>
         </tr>
-        <tr>
+        <tr key={2}>
           <td>Turn Time</td>
           <td className="cell-data">{rfiChangeOrderData?.turn_time}</td>
         </tr>

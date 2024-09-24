@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Authentication.css";
 import { BASE_URL } from "../../utils/contants";
 import { useNavigate } from "react-router-dom";
-import { getToken } from "../../utils/util";
+import { getToken, storeToken } from "../../utils/util";
 
 const AuthenticationScreen: React.FC = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -39,7 +39,7 @@ const AuthenticationScreen: React.FC = () => {
       console.log("Login:", formData);
       (async () => {
         try {
-          const rawResponse = await fetch(`${BASE_URL}/user/login/`, {
+          const rawResponse = await fetch(`${BASE_URL}user/login/`, {
             method: "POST",
             headers: {
               Accept: "application/json",
@@ -49,7 +49,17 @@ const AuthenticationScreen: React.FC = () => {
           });
           const content = await rawResponse.json();
 
-          console.log("content: ", content);
+          if (content?.errorMessage) {
+            alert(content?.errorMessage);
+          } else if (content?.token) {
+            storeToken(content?.token);
+            navigate("/dashboard");
+          } else {
+            alert("Something went wrong, Please try again!");
+          }
+          console.log(content);
+
+          console.log(JSON.stringify(content));
         } catch (error) {
           console.log(error);
         }
@@ -63,7 +73,7 @@ const AuthenticationScreen: React.FC = () => {
       console.log("Sign Up:", formData);
 
       (async () => {
-        const rawResponse = await fetch(`${BASE_URL}/user/signup/`, {
+        const rawResponse = await fetch(`${BASE_URL}user/signup/`, {
           method: "POST",
           headers: {
             Accept: "application/json",
@@ -73,7 +83,16 @@ const AuthenticationScreen: React.FC = () => {
         });
         const content = await rawResponse.json();
 
-        console.log(content);
+        if (content?.errorMessage) {
+          alert(content?.errorMessage);
+        } else if (content?.email) {
+          alert("Registration success, Please login to continue!");
+          setIsLogin(true);
+        } else {
+          alert("Something went wrong, Please try again!");
+        }
+
+        console.log(JSON.stringify(content));
       })();
     }
   };
@@ -134,12 +153,12 @@ const AuthenticationScreen: React.FC = () => {
           {isLogin ? "Login" : "Sign Up"}
         </button>
       </form>
-      <p>
+      {/* <p>
         {isLogin ? "Don't have an account?" : "Already have an account?"}{" "}
         <button onClick={toggleForm} className="toggle-btn">
           {isLogin ? "Sign Up" : "Login"}
         </button>
-      </p>
+      </p> */}
     </div>
   );
 };
