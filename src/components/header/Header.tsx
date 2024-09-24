@@ -4,8 +4,9 @@ import SearchBar from "../searchBar/SearchBar";
 import HeaderTitle from "../headerTitle/HeaderTitle";
 import { MenuItem, Select, SelectChangeEvent } from "@mui/material";
 import { IoLogOutOutline } from "react-icons/io5";
-import { removeToken } from "../../utils/util";
+import { getToken, removeToken } from "../../utils/util";
 import { useNavigate } from "react-router-dom";
+import { BASE_URL } from "../../utils/contants";
 
 function Header({
   projectData,
@@ -24,6 +25,22 @@ function Header({
       (project) => project.project_name === event.target.value
     );
     setSelectedProject(data);
+  };
+
+  const handleLogout = async () => {
+    navigate("/login");
+    const token = getToken();
+    removeToken();
+
+    try {
+      console.log("token:: ", token);
+      await fetch(`${BASE_URL}user/logout/`, {
+        method: "POST",
+        headers: { Authorization: `Bearer ${token}` },
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <div className="header">
@@ -77,10 +94,7 @@ function Header({
             })}
         </Select>
         <IoLogOutOutline
-          onClick={() => {
-            removeToken();
-            navigate("/login");
-          }}
+          onClick={handleLogout}
           className="cursor-pointer"
           color="var(--accent-color)"
           size="45px"
