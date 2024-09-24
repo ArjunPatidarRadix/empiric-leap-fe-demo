@@ -3,6 +3,9 @@ import "./Header.css";
 import SearchBar from "../searchBar/SearchBar";
 import HeaderTitle from "../headerTitle/HeaderTitle";
 import { MenuItem, Select, SelectChangeEvent } from "@mui/material";
+import { IoLogOutOutline } from "react-icons/io5";
+import { removeToken } from "../../utils/util";
+import { useNavigate } from "react-router-dom";
 
 function Header({
   projectData,
@@ -11,6 +14,8 @@ function Header({
   projectData: any[];
   setSelectedProject: Dispatch<SetStateAction<any>>;
 }) {
+  const navigate = useNavigate();
+
   const [project, setProject] = useState(projectData[0].project_name);
   const handleChange = (event: SelectChangeEvent) => {
     console.log("event: " + event.target.value);
@@ -25,7 +30,7 @@ function Header({
       <SearchBar />
       <HeaderTitle title="Dashboard" />
 
-      <>
+      <div className="flex flex-row space-x-5">
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
@@ -65,16 +70,22 @@ function Header({
           {projectData &&
             projectData?.map((data) => {
               return (
-                <MenuItem value={data?.project_name}>
+                <MenuItem key={data?.project_name} value={data?.project_name}>
                   {data?.project_name}
                 </MenuItem>
               );
             })}
-          {/* <MenuItem value={"Project1"}>Project1</MenuItem>
-          <MenuItem value={"Project2"}>Project2</MenuItem>
-          <MenuItem value={"Project3"}>Project3</MenuItem> */}
         </Select>
-      </>
+        <IoLogOutOutline
+          onClick={() => {
+            removeToken();
+            navigate("/login");
+          }}
+          className="cursor-pointer"
+          color="var(--accent-color)"
+          size="45px"
+        />
+      </div>
     </div>
   );
 }

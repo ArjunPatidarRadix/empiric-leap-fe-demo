@@ -9,9 +9,9 @@ function HighestBudgetVariancesWidget({
   return (
     <div>
       <table className="schedule-table" border={0} cellPadding={3}>
-        {budgetVariancesData?.map((data) => {
+        {budgetVariancesData?.map((data, index) => {
           return (
-            <tr>
+            <tr key={index}>
               <td>{data?.subcontractor}</td>
               <td>$ {data?.budget_variance}</td>
             </tr>

@@ -5,13 +5,13 @@ function KPIWidget({ kpiData }: { kpiData: any[] }) {
   return (
     <div>
       <table className="schedule-table" border={0} cellPadding={3}>
-        <tr className="border-below">
+        <tr key={111} className="border-below">
           <td className="td-header">Performance Indicator </td>
           <td className="td-header">Overall Score</td>
         </tr>
-        {kpiData?.map((data) => {
+        {kpiData?.map((data, index) => {
           return (
-            <tr className="border-below">
+            <tr key={index} className="border-below">
               <td>{data?.performance_indicator}</td>
               <td>{data?.overall_score}</td>
             </tr>

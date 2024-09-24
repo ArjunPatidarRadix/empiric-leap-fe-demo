@@ -14,7 +14,7 @@ function ScheduleWidget({ scheduleData }: { scheduleData: any }) {
         }}
       >
         <table className="schedule-table" border={0} cellPadding={3}>
-          <tr>
+          <tr key={1}>
             <td>Original</td>
             {scheduleData?.original ? (
               <td>{`${scheduleData?.original} days`}</td>
@@ -22,7 +22,7 @@ function ScheduleWidget({ scheduleData }: { scheduleData: any }) {
               <td></td>
             )}
           </tr>
-          <tr>
+          <tr key={2}>
             <td>Actual</td>
             {scheduleData?.actual ? (
               <td>{`${scheduleData?.actual} days`}</td>
@@ -31,7 +31,7 @@ function ScheduleWidget({ scheduleData }: { scheduleData: any }) {
             )}
           </tr>
 
-          <tr>
+          <tr key={3}>
             <td>Difference</td>
             {scheduleData?.difference ? (
               <td>{`${scheduleData?.difference} days`}</td>
